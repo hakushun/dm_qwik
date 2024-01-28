@@ -10,17 +10,19 @@ export type Todo = {
   completed: boolean;
 };
 
+function generateId(todos: Todo[]) {
+  const last = todos.at(-1);
+  if (!last) return 0;
+  return last.id + 1;
+}
+
 export default component$(() => {
   const todo = useSignal<string>("");
   const todos = useSignal<Todo[]>([]);
 
   const onSubmit$ = $(() => {
-    function generateId() {
-      const last = todos.value.at(-1);
-      if (!last) return 0;
-      return last.id + 1;
-    }
-    todos.value = [...todos.value, { id: generateId(), title: todo.value, completed: false }];
+    if (todo.value.trim() === "") return;
+    todos.value = [...todos.value, { id: generateId(todos.value), title: todo.value, completed: false }];
     todo.value = "";
   });
 
