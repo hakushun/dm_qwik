@@ -1,0 +1,13 @@
+.todo_form {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .todo_form__input {
+    padding: 0 4px;
+  }
+
+  .todo_form__button {
+    padding: 4px 8px;
+  }
+}

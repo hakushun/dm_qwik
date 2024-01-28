@@ -1,0 +1,25 @@
+.todo_list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: max(50%, 300px);
+
+  .todo_list__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .todo_list__checkbox {
+    cursor: pointer;
+  }
+
+  .todo_list__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .todo_list__title.todo_list__title--checked {
+    text-decoration: line-through;
+  }
+}
