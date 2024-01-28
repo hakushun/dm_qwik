@@ -24,6 +24,14 @@ export const TodoList = component$(({ todos }: Props) => {
           <label for={`${todo.id}`} class={`todo_list__title ${todo.completed ? "todo_list__title--checked" : ""}`}>
             {todo.title}
           </label>
+          <button
+            type="button"
+            onClick$={() => {
+              todos.value = todos.value.filter((item) => item.id !== todo.id);
+            }}
+            class="todo_list__button">
+            Delete
+          </button>
         </li>
       ))}
     </ul>

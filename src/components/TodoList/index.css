@@ -22,4 +22,9 @@
   .todo_list__title.todo_list__title--checked {
     text-decoration: line-through;
   }
+
+  .todo_list__button {
+    margin-left: auto;
+    padding: 4px 8px;
+  }
 }
